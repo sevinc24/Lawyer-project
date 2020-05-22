@@ -1,0 +1,980 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+   
+}
+
+#toTop{
+    position: fixed;
+    bottom: 45px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    color: white;
+    background-color: #c8ac48;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px;
+    display: none;
+}
+
+.carousel-item img {
+    width: 100%;
+    background-size: cover;
+    height: 660px;
+}
+
+
+.del {
+    opacity: 0;
+    visibility: hidden;
+}
+
+// headermenu
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 100px;
+    background-color: #262626;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 4;
+}
+
+header .logo {
+    color: white;
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    float: left;
+    font-weight: bold;
+    img {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 74px;
+        height: 35px;
+    }
+}
+
+header nav {
+    float: right;
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    list-style: none;
+    position: relative;
+}
+
+header nav ul li.sub-menu::before {
+    content: '\f0d7';
+    font-family: fontAwesome;
+    position: absolute;
+    line-height: 50px;
+    color: #fff;
+    right: 5px;
+}
+
+header nav ul li.active.sub-menu::before {
+    content: '\f0d8';
+}
+
+header nav ul li ul {
+    position: absolute;
+    left: 0;
+    background-color: rgb(75, 73, 73);
+    display: none;
+}
+
+header nav ul li.active ul {
+    display: block;
+}
+
+header nav ul li ul li {
+    display: block;
+    width: 200px;
+    color: #2b272c !important;
+}
+
+header nav ul li a {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    color: #fff;
+    text-decoration: none !important;
+}
+
+header nav ul li a:hover {
+    color: #c8ac48;
+    transition: all .3s ease-in-out;
+}
+
+header nav ul li a .active {
+    color: #c8ac48;
+}
+
+.menu-toggle {
+    color: #fff;
+    float: right;
+    line-height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 991px) {
+    header {
+        padding: 0 20px;
+    }
+    .menu-toggle {
+        display: block !important;
+    }
+    header nav {
+        position: absolute;
+        width: 100%;
+        height: calc(100vh - 50px);
+        background-color: #333;
+        top: 50px;
+        left: -100%;
+        transition: 0.5;
+    }
+    header nav.active {
+        left: 0;
+    }
+    header nav ul {
+        display: block;
+        text-align: center;
+    }
+    header nav ul li {
+        border-bottom: 1px solid rgba(0, 0, 0, .2);
+    }
+    header nav ul li.active ul {
+        position: relative;
+    }
+    header nav ul li ul li {
+        width: 100%;
+    }
+}
+
+// --------------------------header up vords--------------------
+.datapages {
+    margin-top: 120px;
+    z-index: 1;
+    div {
+        text-align: center;
+        h1 {
+            top: 100px;
+            position: relative;
+            font-family: "Playfair Display";
+            font-size: 62px;
+            line-height: 62px;
+            font-weight: 400;
+            color: rgb(255, 255, 255);
+            letter-spacing: -1px;
+            font-family: "Playfair Display";
+            visibility: inherit;
+        }
+        p {
+            top: 140px;
+            position: relative;
+            font-size: 20px;
+            line-height: 24px;
+            font-weight: 400;
+            color: rgb(165, 165, 165);
+            letter-spacing: 0px;
+            font-family: 'Muli', sans-serif;
+            visibility: inherit;
+        }
+    }
+    div {
+        .span {
+            position: relative;
+            width: 100px;
+            height: 3px;
+            background: #c8ac48;
+            left: 624px;
+            top: 110px;
+        }
+    }
+    .littlebtnn {
+        position: relative;
+        top: 110px;
+        right: 7px;
+        .btn {
+            width: 141px;
+            height: 40px;
+            top: 60px;
+            background-color: transparent !important;
+            border: none;
+            position: relative;
+            transition: .6s !important;
+            overflow: hidden;
+            font-size: 15px;
+            font-weight: bold !important;
+            &::before {
+                content: " ";
+                position: absolute;
+                width: 100%;
+                height: 0;
+                left: 0;
+                z-index: -1;
+                background-color: #c8ac48;
+                transition: .6s;
+            }
+        }
+        .btn-1 {
+            color: #c8ac48;
+            z-index: 2;
+            &:hover {
+                color: #fff;
+                &::before {
+                    height: 180%;
+                }
+            }
+            &::before {
+                top: 0;
+                border-radius: 0px 0px 0px 0xp;
+            }
+        }
+    }
+}
+
+// ------------------------particals part---------------------
+canvas {
+    display: block;
+}
+
+#particles-js {
+    position: absolute !important;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+//---------------------- end particas part--------------------
+.overlay {
+    background-color: rgba(245, 246, 233, 0.85);
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: absolute !important;
+    background-repeat: repeat !important;
+}
+
+// ----------------- start Welcome to Flavius--------------------
+.welcomeimage {
+    padding: 0;
+    margin: 0;
+    img {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+    .welcomepage {
+        position: absolute;
+        top: 0;
+        padding: 60px;
+        h1 {
+            font-weight: bold;
+            font-size: 40px;
+            color: #c8ac48;
+            font-family: 'Times New Roman', Times, serif;
+            padding-top: 50px;
+        }
+        p {
+            font-size: 20px;
+            color: #2b272c;
+            font-family: 'Times New Roman', Times, serif;
+            padding-top: 10px;
+        }
+        span {
+            font-size: 18px;
+            padding-top: 60px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .footer {
+            padding-top: 50px;
+            h3 {
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 14px;
+                font-family: Muli, sans-serif;
+                margin-bottom: 0px;
+                p {
+                    font-size: 16px;
+                    text-transform: none;
+                    color: rgb(200, 172, 72) !important;
+                    border-color: rgb(200, 172, 72) !important;
+                    width: 100%;
+                }
+            }
+            .paulsmall {
+                margin-top: 22px;
+            }
+            img {
+                width: 100px;
+                margin-left: 15px;
+                margin-top: 0px;
+            }
+        }
+    }
+}
+
+// ----------------- end Welcome to Flavius---------------------
+
+// -------------------Practice Areas start-----------------------------
+.backg {
+    background-image: url('../../image/lawyertack.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-attachment: fixed;
+    .backg1 {
+        background-image: url('../../image/background.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        opacity: .9;
+        .center1 {
+            p {
+                color: #a5a5a5;
+            }
+        }
+        .PracticAereas {
+            padding: 20px;
+            a {
+                i {
+                    font-size: 30px;
+                    color: #c8ac48;
+                    padding: 10px;
+                    &:hover {
+                        color: #695c2d;
+                        transition: all .5s ease;
+                    }
+                }
+            }
+            div {
+                a {
+                    text-decoration: none;
+                    h3 {
+                        color: white;
+                        font-family: 'Playfair Display', serif;
+                        font-weight: 500;
+                        padding: 10px;
+                        &:hover {
+                            color: #c8ac48;
+                            transition: all .5s ease;
+                        }
+                    }
+                }
+                hr {
+                    width: 50px;
+                    background-color: #c8ac48;
+                    margin: 0px;
+                    margin-left: 10px;
+                }
+                p {
+                    color: #a5a5a5;
+                    font-size: 19px;
+                    font-family: 'Playfair Display', serif;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+}
+
+// ----------------------------------Practice Areas end------------------------------
+
+// ------------------------ 20 Years of Experience in Various Cases start--------------
+.backgroundimg {
+    background: url('../../image/background2.jpg');
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 350px;
+    background-attachment: fixed;
+    position: relative;
+    .effect {
+        background-color: #c8ac48;
+        position: absolute !important;
+        left: 0;
+        top: 0;
+        opacity: .8;
+        width: 100%;
+        height: 350px;
+    }
+    .variousCases {
+        text-align: center;
+        padding-top: 50px;
+        h1 {
+            font-size: 40px;
+            color: #fff;
+            font-weight: 400;
+            text-transform: none;
+            font-family: 'Playfair Display', serif;
+        }
+        p {
+            font-size: 20px;
+            line-height: 24px;
+            font-family: 'Playfair Display', serif;
+            color: #fff;
+            text-transform: none;
+            padding: 10px 0px 20px 0px;
+        }
+        a {
+            button {
+                color: white;
+                width: 250px;
+                height: 50px;
+                border: none;
+                background-color: #171518;
+                padding: 15px 0px 20px 0px;
+                text-align: center;
+                font-weight: 400;
+                font-family: 'Playfair Display', serif;
+                ;
+                &:hover {
+                    background-color: #2b272c;
+                    transition: all .3s;
+                }
+            }
+        }
+    }
+}
+
+// ------------------------ 20 Years of Experience in Various Cases end----------------
+
+// ------------------------------image gallery  start---------------------------------
+.gallerybackfon {
+    background-image: url('../../image/main_bg.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.galleriss {
+    padding-bottom: 30px;
+    h1 {
+        p {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            color: #c8ac48;
+            font-size: 50px;
+            padding-top: 70px;
+        }
+    }
+    p {
+        color: #a5a5a5;
+        font-family: 'Playfair Display', serif;
+        font-size: 20px;
+    }
+}
+
+.gallery {
+    img {
+        width: 100%;
+        border-radius: 10px;
+        &:hover {
+            transform: scale(1.25);
+            box-shadow: rgba(0, 0, 0, .5);
+        }
+    }
+    .counter-box {
+        padding: 20px;
+    }
+}
+
+// ------------------------------image gallery  end---------------------------------
+.center {
+    text-align: center;
+    padding-top: 60px;
+    h1 {
+        font-weight: 500;
+        font-size: 45px;
+        font-family: 'Playfair Display', serif;
+        color: #c8ac48;
+        padding-top: 20px;
+    }
+    p {
+        color: #a5a5a5;
+        font-family: 'Playfair Display', serif;
+        font-size: 20px;
+    }
+}
+
+// --------------------------------sorgu formu start----------------------------------
+.full_container {
+    background-image: url("../../image/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    padding: 18px;
+    width: 100%;
+    .rigthpart {
+        margin: 0;
+        margin-top: 30px;
+        .backgrndcolor {
+            div {
+                img {
+                    margin-top: 4px !important;
+                    margin-left: 20px;
+                }
+                h1 {
+                    font-size: 40px;
+                    word-break: break-word;
+                    font-weight: 400;
+                    line-height: 1.1;
+                    color: #c8ac48;
+                    font-family: 'Playfair Display', serif;
+                    margin-left: 20px;
+                }
+                p {
+                    font-size: 20px;
+                    line-height: 20px;
+                    font-family: 'Playfair Display', serif;
+                    margin-left: 20px;
+                    span {
+                        color: #a5a5a5;
+                    }
+                }
+                input {
+                    width: 205px;
+                    height: 46px;
+                    outline: 0 none;
+                    font-family: 'Playfair Display', serif;
+                    background-color: transparent;
+                    border: 0;
+                    border-radius: 0;
+                    border-color: rgba(0, 0, 0, 0.1);
+                    border-style: solid;
+                    border-bottom-width: 2px;
+                    font-weight: 400;
+                    font-style: normal;
+                    box-shadow: none;
+                    border-color: #c8ac48;
+                    ;
+                    padding-left: 0;
+                    padding-right: 0;
+                    padding-top: 11px;
+                    padding-bottom: 11px;
+                    font-size: 16px;
+                    line-height: 20px;
+                    letter-spacing: 0;
+                    text-transform: none;
+                    color: #a5a5a5;
+                    margin-top: 20px;
+                    margin-left: 30px;
+                    &:focus::placeholder {
+                        color: transparent;
+                    }
+                }
+            }
+            .texts {
+                textarea {
+                    width: 430px;
+                    height: 40px;
+                    outline: 0 none;
+                    font-family: 'Playfair Display', serif;
+                    background-color: transparent;
+                    border: 0;
+                    border-radius: 0;
+                    border-color: rgba(0, 0, 0, 0.1);
+                    border-style: solid;
+                    border-bottom-width: 2px;
+                    font-weight: 400;
+                    font-style: normal;
+                    box-shadow: none;
+                    border-color: #c8ac48;
+                    padding-left: 0;
+                    padding-right: 0;
+                    padding-top: 11px;
+                    padding-bottom: 11px;
+                    font-size: 16px;
+                    line-height: 20px;
+                    letter-spacing: 0;
+                    text-transform: none;
+                    color: #a5a5a5;
+                    margin-top: 20px;
+                    margin-left: 20px;
+                    overflow: hidden;
+                    &:focus::placeholder {
+                        color: transparent;
+                    }
+                }
+            }
+            .rightbutton {
+                margin-top: 20px;
+                button {
+                    width: 230px;
+                    height: 45px;
+                    border: none;
+                    color: white;
+                    background-color: #c8ac48;
+                    ;
+                    font-weight: 500;
+                    margin: 20px;
+                    &:hover {
+                        background-color: #b8a667;
+                    }
+                }
+            }
+        }
+    }
+}
+// --------------------------------sorgu formu end----------------------------------
+
+// ----------------------- Swipper slider start--------------------------------------
+.swipperslider {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    padding: 70px 0;
+    margin: 0;
+    cursor: pointer;
+    .swiper-container {
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 50px;
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 380px;
+            background: #fff;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            .details {
+                box-sizing: border-box;
+                font-size: 20px;
+                padding: 20px;
+            }
+        }
+    }
+}
+
+.backgroundgrey {
+    background-image: url('../../image/main_bg.png');
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    .center {
+        margin: 0px;
+        padding: 25px;
+    }
+}
+
+// ----------------------- Swipper slider start--------------------------------------
+
+// ----------------------------footer part start-------------------------------------
+.darkimage {
+    background-image: url('../../image/background.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.footerpadding {
+    padding: 20px;
+    padding-top: 60px;
+}
+
+.footer-part-1 {
+    img {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 74px;
+        height: 35px;
+    }
+}
+
+.text {
+    p {
+        margin-top: 10px;
+        span {
+            font-size: 18px;
+            font-family: 'Playfair Display', serif;
+            color: #a5a5a5;
+        }
+    }
+}
+
+.socials-part {
+    a {
+        margin-right: 20px;
+        text-decoration: none;
+        list-style: none;
+        i {
+            color: #a5a5a5;
+            font-size: 14px;
+            &:hover {
+                color: #c8ac48;
+            }
+        }
+    }
+}
+
+.footer-part2 {
+    margin-top: 15px;
+    div {
+        h3 {
+            word-break: break-word;
+            font-weight: 400;
+            span {
+                font-family: 'Playfair Display', serif;
+                color: white;
+            }
+        }
+    }
+    .place {
+        margin-left: 5px;
+        div {
+            a {
+                i {
+                    font-size: 15px;
+                    color: #c8ac48;
+                }
+            }
+        }
+        div {
+            p {
+                span {
+                    color: #a5a5a5;
+                    font-family: 'Playfair Display', serif;
+                    margin-left: 10px;
+                    font-size: 18px;
+                }
+            }
+        }
+        div {
+            p {
+                a {
+                    color: #a5a5a5;
+                    font-family: 'Playfair Display', serif;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}
+
+.footer-part3 {
+    margin-top: 15px;
+    div {
+        h3 {
+            word-break: break-word;
+            font-weight: 400;
+            span {
+                font-family: 'Playfair Display', serif;
+                color: white;
+            }
+        }
+    }
+    .place1 {
+        margin-left: 5px;
+        div {
+            a {
+                text-decoration: none;
+                list-style: none;
+                i {
+                    font-size: 15px;
+                    color: #c8ac48;
+                }
+            }
+        }
+        div {
+            p {
+                span {
+                    color: #a5a5a5;
+                    font-family: 'Playfair Display', serif;
+                    margin-left: 10px;
+                    font-size: 18px;
+                }
+                a {
+                    color: #c8ac48;
+                }
+                strong {
+                    color: white;
+                    font-family: 'Playfair Display', serif;
+                }
+            }
+        }
+    }
+}
+
+.footerend {
+    background-color: #c8ac48;
+    text-align: center;
+    div {
+        span {
+            color: white;
+            font-size: 20px;
+            font-family: 'Playfair Display', serif;
+            ;
+        }
+    }
+}
+
+// ----------------------------footer part end---------------------------------------------
+@media (max-width : 568px){
+    .PracticAereas{
+        .mybigicons{
+            margin-left : 70px !important;
+        }
+        .myhr{
+          display: none !important;
+        }
+       
+    }
+   
+     .for768{
+        margin-left:24px !important;
+            input{
+                width: 100%;
+            }
+        }
+        .texts{
+            margin-left: -4px;
+        }
+        .leftpart{
+            div{
+                img{
+                    padding-top: 0px !important;
+                }
+            }
+        }
+        .footer-part-1{
+            margin-left: 50px;
+        }
+        .footer-part2{
+            margin-left: 50px;
+        }
+        .footer-part3{
+            margin-left: 50px;
+        }
+        .center p{
+            font-size: 18px !important;
+  
+        }
+ }
+@media (max-width : 768px){
+    .variousCases{
+        padding: 50px;
+    }
+    .leftpartblock{
+          display: block !important;
+    }
+    .leftpart{
+        margin: 0px !important;
+        flex: 100% !important;
+        max-width: 100% !important;
+      
+    }
+    .rigthpart{
+        margin: 0px !important;
+        flex: 100% !important;
+        max-width: 100% !important;
+        padding-top: 10px;
+        text-align: center;
+        .backgrndcolor{
+            div{
+                input
+                {
+                    width: 100%;
+                    flex: 100% !important;
+                    max-width: 100% !important;
+                }
+            }
+        }
+      .for768{
+        margin-left: 130px;
+      }
+  }
+ }
+@media (max-width : 1024px){
+    .leftpart{
+        div{
+            img{
+                width: 100%;
+                padding-top: 60px;
+                display: block;
+            }
+        }
+    }
+    .PracticAereas{
+        text-align: center;
+        .myhr{
+            margin-left: 115px !important;
+        }
+        .mybigicons{
+            margin-left: 115px;
+        }
+        .forward{
+            margin-left: 20px;
+        }
+        .back{
+            margin-right: 10px;
+        }
+    }
+    .datapages div .span{
+        left:440px !important;
+    }
+    .footer-part-1 {
+        .text{
+            p{
+                span{
+                    font-size: 15px !important;
+                }
+            }
+        }
+    }
+    .footer-part2{
+        .place{
+            div{
+                p{
+                    span{
+                        font-size: 15px !important;
+                    }
+                }
+            }
+        }
+    }
+    .footer-part3{
+        .place1{
+            div{
+                    p{
+                        span{       
+                            font-size: 14px !important;
+                        }
+                    }
+            }
+        }
+     }
+}

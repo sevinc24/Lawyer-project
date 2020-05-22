@@ -1,0 +1,461 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.overlay {
+    background-color: rgba(245, 246, 233, 0.85);
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: absolute !important;
+    background-repeat: repeat !important;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 100px;
+    background-color: #262626;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 4;
+}
+
+header .logo {
+    color: white;
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    float: left;
+    font-weight: bold;
+    img {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 74px;
+        height: 35px;
+    }
+}
+
+header nav {
+    float: right;
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    list-style: none;
+    position: relative;
+}
+
+header nav ul li.sub-menu::before {
+    content: '\f0d7';
+    font-family: fontAwesome;
+    position: absolute;
+    line-height: 50px;
+    color: #fff;
+    right: 5px;
+}
+
+header nav ul li.active.sub-menu::before {
+    content: '\f0d8';
+}
+
+header nav ul li ul {
+    position: absolute;
+    left: 0;
+    background-color: rgb(75, 73, 73);
+    display: none;
+}
+
+header nav ul li.active ul {
+    display: block;
+}
+
+header nav ul li ul li {
+    display: block;
+    width: 200px;
+    color: #2b272c !important;
+}
+
+header nav ul li a {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    color: #fff;
+    text-decoration: none !important;
+}
+
+header nav ul li a:hover {
+    color: #c8ac48;
+    transition: all .3s ease-in-out;
+}
+
+header nav ul li a .active {
+    color: #c8ac48;
+}
+
+.menu-toggle {
+    color: #fff;
+    float: right;
+    line-height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 991px) {
+    header {
+        padding: 0 20px;
+    }
+    .menu-toggle {
+        display: block !important;
+    }
+    header nav {
+        position: absolute;
+        width: 100%;
+        height: calc(100vh - 50px);
+        background-color: #333;
+        top: 50px;
+        left: -100%;
+        transition: 0.5;
+    }
+    header nav.active {
+        left: 0;
+    }
+    header nav ul {
+        display: block;
+        text-align: center;
+    }
+    header nav ul li {
+        border-bottom: 1px solid rgba(0, 0, 0, .2);
+    }
+    header nav ul li.active ul {
+        position: relative;
+    }
+    header nav ul li ul li {
+        width: 100%;
+    }
+}
+
+// -----------------------------corporate lap part start------------------------------------------
+.Corporatelaw {
+    background-image: url('../../image/imageslowyer.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    .Corporatelaw1 {
+        background-color: #d1b44a;
+        opacity: .9;
+        width: 100%;
+        height: 160px;
+        div {
+            h3 {
+                color: white;
+                font-size: 40px;
+                font-family: 'Playfair Display', serif;
+                font-weight: 500;
+                padding-top: 60px;
+            }
+        }
+        .center_links {
+            padding: 0 !important;
+            div {
+                a {
+                    text-decoration: none;
+                    margin: 10px;
+                    span {
+                        font-size: 20px;
+                        font-family: 'Playfair Display', serif;
+                        color: #232124;
+                        &:hover {
+                            color: white;
+                            transition: all .3s ease;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// -----------------------------corporate lap part end------------------------------------------
+// --
+.Corporatelawback {
+    background-image: url('../../image/bacgroundimggrey.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    .familylaw1 {
+        margin-top: 100px;
+        img {
+            width: 100%;
+            margin-top: 20px;
+            height: 100%;
+        }
+    }
+    .familylaw2 {
+        margin-top: 100px;
+        h1 {
+            font-family: ' Playfair Display', serif;
+            font-size: 35px;
+            font-weight: 500;
+            margin: 10px 0px 0px 40px;
+        }
+        hr {
+            width: 30px;
+            background-color: #c8ac48;
+            height: 1px;
+            margin: 0px;
+            margin: 20px 0px 0px 40px;
+        }
+        p {
+            font-family: ' Playfair Display', serif;
+            font-size: 18px;
+            margin: 20px 0px 0px 40px;
+        }
+        .list {
+            margin-top: 20px;
+            ul {
+                li {
+                    list-style: none;
+                    position: relative;
+                    font-size: 16px;
+                    line-height: 27px;
+                    color: rgb(43, 39, 44);
+                    padding: 3px 0px 3px 5px;
+                    &::before {
+                        font-family: FontAwesome;
+                        font-size: 14px;
+                        content: " >";
+                        position: absolute;
+                        left: -10px;
+                        top: 4px;
+                        color: rgb(200, 172, 72);
+                    }
+                }
+            }
+        }
+    }
+    .mutedtext {
+        padding-bottom: 100px;
+        padding-top: 50px;
+        p {
+            margin: 0px;
+            font-family: ' Playfair Display', serif;
+            font-size: 18px;
+        }
+    }
+}
+
+// ----------------------------footer part start---------------------------------------------
+.darkimage {
+    background-image: url('../../image/background.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.footerpadding {
+    padding: 20px;
+    padding-top: 60px;
+}
+
+.footer-part-1 {
+    img {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 74px;
+        height: 35px;
+    }
+}
+
+.text {
+    p {
+        margin-top: 10px;
+        span {
+            font-size: 18px;
+            font-family: 'Playfair Display', serif;
+            color: #a5a5a5;
+        }
+    }
+}
+
+.socials-part {
+    a {
+        margin-right: 20px;
+        text-decoration: none;
+        list-style: none;
+        i {
+            color: #a5a5a5;
+            font-size: 14px;
+            &:hover {
+                color: #c8ac48;
+            }
+        }
+    }
+}
+
+.footer-part2 {
+    margin-top: 15px;
+    div {
+        h3 {
+            word-break: break-word;
+            font-weight: 400;
+            span {
+                font-family: 'Playfair Display', serif;
+                color: white;
+            }
+        }
+    }
+    .place {
+        margin-left: 5px;
+        div {
+            a {
+                i {
+                    font-size: 15px;
+                    color: #c8ac48;
+                }
+            }
+        }
+        div {
+            p {
+                span {
+                    color: #a5a5a5;
+                    font-family: 'Playfair Display', serif;
+                    margin-left: 10px;
+                    font-size: 18px;
+                }
+            }
+        }
+        div {
+            p {
+                a {
+                    color: #a5a5a5;
+                    font-family: 'Playfair Display', serif;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}
+
+.footer-part3 {
+    margin-top: 15px;
+    div {
+        h3 {
+            word-break: break-word;
+            font-weight: 400;
+            span {
+                font-family: 'Playfair Display', serif;
+                color: white;
+            }
+        }
+    }
+    .place1 {
+        margin-left: 5px;
+        div {
+            a {
+                text-decoration: none;
+                list-style: none;
+                i {
+                    font-size: 15px;
+                    color: #c8ac48;
+                }
+            }
+        }
+        div {
+            p {
+                span {
+                    color: #a5a5a5;
+                    font-family: 'Playfair Display', serif;
+                    margin-left: 10px;
+                    font-size: 18px;
+                }
+                a {
+                    color: #c8ac48;
+                }
+                strong {
+                    color: white;
+                    font-family: 'Playfair Display', serif;
+                }
+            }
+        }
+    }
+}
+
+.footerend {
+    background-color: #c8ac48;
+    text-align: center;
+    div {
+        span {
+            color: white;
+            font-size: 20px;
+            font-family: 'Playfair Display', serif;
+            ;
+        }
+    }
+}
+
+// ----------------------------footer part end---------------------------------------------
+@media (max-width: 568px){
+    .footer-part-1{
+        margin-left: 50px;
+    }
+    .footer-part2{
+        margin-left: 50px;
+    }
+    .footer-part3{
+        margin-left: 50px;
+    }
+}
+@media (max-width: 1024px){
+    .footer-part-1{
+        .text{
+            p{
+                span{
+                    font-size: 15px !important;
+                }
+            }
+        }
+    }
+    .footer-part2{
+        .place{
+            div{
+                p{
+                    span{
+                        font-size: 15px !important;
+                    }
+                }
+            }
+        }
+    }
+    .footer-part3{
+        .place1{
+            div{
+                    p{
+                        span{       
+                            font-size: 14px !important;
+                        }
+                    }
+            }
+        }
+     }
+}
